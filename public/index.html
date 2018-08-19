@@ -93,7 +93,21 @@
 <template id="show-page">
   <div class="vue-component">
 
-    <h1>{{ message }}</h1>
+    <h1>Resume of {{ resume.student.first_name }}</h1>
+
+    <div>
+      <p>{{ resume.student.first_name }}</p>
+      <p>{{ resume.student.last_name }}</p>
+      <p>{{ resume.student.email }}</p>
+      <p>{{ resume.student.phone_number }}</p>
+      <p>{{ resume.student.short_bio }}</p>
+      <p>{{ resume.student.linkedin_url }}</p>
+      <p>{{ resume.student.twitter_handle }}</p>
+      <p>{{ resume.student.website_url }}</p>
+      <p>{{ resume.student.online_resume_url }}</p>
+      <p>{{ resume.student.github_url }}</p>
+      <p>{{ resume.student.photo_url }}</p>
+    </div>
 
   </div>
 </template>
