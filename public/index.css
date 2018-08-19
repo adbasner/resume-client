@@ -1,0 +1,19 @@
+#carousel-container {
+  
+}
+
+#carousel {
+  position: relative;
+}
+
+#carousel-text {
+  position: absolute;
+  top: 35%;
+  left: 5%;
+  text-align: center; 
+  z-index: 2;
+  color: white;
+  font-family: sans-serif;
+  width: 90%;
+  margin: 0 auto;
+}
