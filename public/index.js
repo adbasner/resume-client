@@ -28,10 +28,28 @@ var ShowPage = {
   template: "#show-page",
   data: function() {
     return {
-      message: "Welcome to Vue.js!"
+      resume: {
+        student: {
+          first_name: "",
+          last_name: "",
+          email: "",
+          phone_number: "",
+          short_bio: "",
+          linkedin_url: "",
+          twitter_handle: "",
+          website_url: "",
+          online_resume_url: "",
+          github_url: "",
+          photo_url: ""
+        },
+      }
     };
   },
-  created: function() {},
+  created: function() {
+    axios.get("/api/resumes/" + this.$route.params.id).then(function(response) {
+      this.resume = response.data;
+    }.bind(this));
+  },
   methods: {},
   computed: {}
 };
