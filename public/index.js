@@ -30,17 +30,17 @@ var ShowPage = {
     return {
       resume: {
         student: {
-          first_name: "",
-          last_name: "",
-          email: "",
-          phone_number: "",
-          short_bio: "",
-          linkedin_url: "",
-          twitter_handle: "",
-          website_url: "",
-          online_resume_url: "",
-          github_url: "",
-          photo_url: ""
+          first_name: "Bob",
+          last_name: "Jones",
+          email: "email@email.com",
+          phone_number: "8675309",
+          short_bio: "bio goes here",
+          linkedin_url: "linkedin url",
+          twitter_handle: "twitter",
+          website_url: "web@site.com",
+          online_resume_url: "resume.com",
+          github_url: "github.com/profile",
+          photo_url: "photo.com"
         },
       }
     };
