@@ -17,10 +17,15 @@ var IndexPage = {
   data: function() {
     return {
       message: "Welcome to Vue.js!",
-      resumes: []
+      students: []
     };
   },
-  created: function() {},
+  created: function() {
+    axios.get("").then(function(response) {
+      console.log(response.data);
+      this.students = response.data;
+    }.bind(this));
+  },
   methods: {},
   computed: {}
 };
@@ -40,7 +45,7 @@ var ShowPage = {
 var router = new VueRouter({
   routes: [
     { path: "/", component: HomePage },
-    { path: "/resumes", component: IndexPage},
+    { path: "/students", component: IndexPage},
     { path: "/resumes/:id", component: ShowPage }
   ],
   scrollBehavior: function(to, from, savedPosition) {
