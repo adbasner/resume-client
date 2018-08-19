@@ -16,7 +16,8 @@ var IndexPage = {
   template: "#index-page",
   data: function() {
     return {
-      message: "Welcome to Vue.js!"
+      message: "Welcome to Vue.js!",
+      students: []
     };
   },
   created: function() {},
