@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+  
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -48,22 +49,24 @@
     </div>
   </nav>
 
-  <div id="vue-app">
+    <div id="vue-app">
 
-    <router-view></router-view>
+      <router-view></router-view>
 
-  </div>
+    </div>
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-</body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </body>
 </html>
 
 <template id="home-page">
   <div class="vue-component">
+
     <div id="#carousel-container" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner" id="carousel">
         <h2 id="carousel-text">{{ message }}</h2>
@@ -131,18 +134,27 @@
     <h1>Resume of {{ resume.student.first_name }}</h1>
 
     <div>
-      <p>{{ resume.student.first_name }}</p>
-      <p>{{ resume.student.last_name }}</p>
-      <p>{{ resume.student.email }}</p>
-      <p>{{ resume.student.phone_number }}</p>
-      <p>{{ resume.student.short_bio }}</p>
-      <p>{{ resume.student.linkedin_url }}</p>
-      <p>{{ resume.student.twitter_handle }}</p>
-      <p>{{ resume.student.website_url }}</p>
-      <p>{{ resume.student.online_resume_url }}</p>
-      <p>{{ resume.student.github_url }}</p>
-      <p>{{ resume.student.photo_url }}</p>
+      <h3>Student Information</h3>
+      <p>First Name: {{ student.information.first_name }}</p>
+      <p>Last Name: {{ student.information.last_name }}</p>
+      <p>Email: {{ student.information.email }}</p>
+      <p>Phone Number: {{ student.information.phone_number }}</p>
+      <p>Short Bio: {{ student.information.short_bio }}</p>
+      <p>Linkedin Url: {{ student.information.linkedin_url }}</p>
+      <p>Twitter Handle: {{ student.information.twitter_handle }}</p>
+      <p>Website Url: {{ student.information.website_url }}</p>
+      <p>Online Resume Url: {{ student.information.online_resume_url }}</p>
+      <p>Github Url: {{ student.information.github_url }}</p>
+      <p>Photo Url: {{ student.information.photo_url }}</p>
     </div>
+
+    <div>
+      <h3>Student Experience</h3>
+      <p></p>
+    </div>
+
+    <a class="twitter-timeline" href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> 
+    <!-- <a class="twitter-timeline" v-bind:href="{{ student.information.twitter_handle }}">Tweets by TwitterDev</a>  -->
 
   </div>
 </template>
