@@ -34,8 +34,8 @@ var ShowPage = {
   template: "#show-page",
   data: function() {
     return {
-      resume: {
-        student: {
+      student: {
+        information: {
           first_name: "Bob",
           last_name: "Jones",
           email: "email@email.com",
@@ -48,6 +48,29 @@ var ShowPage = {
           github_url: "github.com/profile",
           photo_url: "photo.com"
         },
+        experience: {
+          start_date: "",
+          end_date: "",
+          job_title: "",
+          company_name: "",
+          details: ""
+        },
+        education: {
+          start_date: "",
+          end_date: "",
+          degree: "",
+          university_name: "",
+          details: ""
+        },
+        skills: {
+          skill_name: []
+        },
+        capstone: {
+          name: "",
+          description: "",
+          url: "",
+          image_url: ""
+        }
       }
     };
   },
@@ -64,7 +87,7 @@ var router = new VueRouter({
   routes: [
     { path: "/", component: HomePage },
     { path: "/students", component: IndexPage},
-    { path: "/resumes/:id", component: ShowPage }
+    { path: "/students/:id", component: ShowPage }
   ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };
