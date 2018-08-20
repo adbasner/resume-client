@@ -64,7 +64,7 @@ var router = new VueRouter({
   routes: [
     { path: "/", component: HomePage },
     { path: "/students", component: IndexPage},
-    { path: "/resumes/:id", component: ShowPage }
+    { path: "/students/:id", component: ShowPage }
   ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };
