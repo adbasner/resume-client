@@ -118,12 +118,12 @@
 
 <template id="index-page">
   <div class="vue-component">
-    <h1>{{ message }}</h1>
     <div v-for="student in students">
       <p> {{student.first_name}} {{student.last_name}} </p>
       <p> {{student.email}} </p>
       <p> {{student.phone_number}} </p>
-      <p> {{student.bio}} </p>
+      <p> {{student.short_bio}} </p>
+      <a class="btn btn-info" v-bind:href="'/students/' + student.id">Go to Student Page</a>
     </div>
   </div>
 </template>
