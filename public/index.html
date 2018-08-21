@@ -1,54 +1,268 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Resume App</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.js"></script>
-    <script src="index.js" defer></script>
+  
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Resume App</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.js"></script>
+  <script src="index.js" defer></script>
 
-  </head>
-  <body>
+</head>
 
-    <div id="vue-app">
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Resume Mastery</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <router-view></router-view>
-
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/#/courses">My Resume</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/#/courses">View Resumes</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav navbar-right">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Sign Up</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Login</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Logout</a>
+        </li>
+      </ul>
     </div>
+  </nav>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
+  <div id="vue-app">
+
+    <router-view></router-view>
+
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
 </html>
 
 <template id="home-page">
   <div class="vue-component">
 
-    <h1>{{ message }}</h1>
-
-  </div>
+    <div id="#carousel-container" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner" id="carousel">
+        <h2 id="carousel-text">{{ message }}</h2>
+        <div class="carousel-item active">
+          <img class="d-block w-100 h-75" src="images/slide1.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100 h-75" src="images/slide2.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100 h-75" src="images/slide3.jpg" alt="Third slide">
+        </div>
+      </div> <!-- carousel-inner -->
+    </div>  <!-- carousel-slide -->
+    <div class="container card-cont">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header">
+              Upload and be found
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Post your resume</h5>
+              <p class="card-text">Let potential employers you and be impressed with your skillz.</p>
+              <a href="#" class="btn btn-primary">Your resume</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header">
+              Search and Find
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">View resumes of other great developers.</h5>
+              <p class="card-text">View and search through billions of the best developer resumes.</p>
+              <a href="#" class="btn btn-primary">Veiw resumes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div> <!-- container -->
+    <footer>
+      <p class="footer-text">copyright our group</p>
+    </footer>
+  </div>  <!-- vue-component -->
 </template>
 
 <template id="index-page">
   <div class="vue-component">
+    <div v-for="student in students">
+      <div class="card">
+        <div class="card-header">
+          {{student.first_name}} {{student.last_name}}
+        </div>
+        <div class="card-body">
+          
+          <p>Email: {{student.email}} </p>
+          <p>Phone Number: {{student.phone_number}} </p>
+          <p>Bio: {{student.short_bio}} </p>
+          <a class="btn btn-info" v-bind:href="'/#/students/' + student.id">Go to Student Page</a>
+        </div>
+      </div>
 
-    <h1>{{ message }}</h1>
-
+    </div>
   </div>
+
+
 </template>
 
 <template id="show-page">
   <div class="vue-component">
+    <div class="container show-cont">
+      <h1>Resume of {{ student.information.first_name }} {{ student.information.last_name }}</h1>
 
-    <h1>{{ message }}</h1>
+      <div class="photo">
+        <p>This is a photo if it existed</p>
+        <p>{{ student.information.photo_url }}</p>
+      </div>
+      <div class="row">
+        <div class="col-6 heading">
+          <p>Email:</p>
+        </div>
+        <div class="col-6 info">
+          <p>{{ student.information.email }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 heading">
+          <p>Phone Number:</p>
+        </div>
+        <div class="col-6 info">
+          <p>{{ student.information.phone_number }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 heading">
+          <p>Bio:</p>
+        </div>
+        <div class="col-6 info">
+          <p>{{ student.information.short_bio }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 heading">
+          <p>Social Links:</p>
+        </div>
+        <div class="col-6 info">
+          <p>{{ student.information.linkedin_url }}</p>
+          <p>{{ student.information.twitter_handle }}</p>
+          <p>{{ student.information.website_url }}</p>
+          <p>{{ student.information.online_resume_url }}</p>
+          <p>{{ student.information.github_url }}</p>
+        </div>
+      </div>
 
-  </div>
+      <div v-for="experience in student.experiences">
+        <div class="row">
+          <div class="col-6 heading">
+            <p>Recent Job:</p>
+          </div>
+          <div class="col-6 info">
+            <p>{{ experience.job_title }} at {{ experience.company_name }}</p>
+            <p>Start Date: {{ experience.start_date }}</p>
+            <p>End Date: {{ experience.end_date }}</p>
+            <p>Job description: {{ experience.details }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div v-for="education in student.educations">
+        <div class="row">
+          <div class="col-6 heading">
+            <p>Schooling:</p>
+          </div>
+          <div class="col-6 info">
+            <p>{{ education.degree }} from {{ education.university_name }}</p>
+            <p>Start Date: {{ education.start_date }}</p>
+            <p>End Date: {{ education.end_date }}</p>
+            <p>Job description: {{ education.details }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div v-for="skill in student.skills">
+        <div class="row">
+          <div class="col-6 heading">
+            <p>Skillz:</p>
+          </div>
+          <div class="col-6 info">
+            <p>{{ skill.skill_name }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="capstone">
+        <h3>Capstone Projcts</h3>
+
+        <div v-for="capstone in student.capstones">
+          <p>{{ capstone.name }}</p>
+          <div class="row">
+            <div class="col-6 heading">
+              <p>Description:</p>
+            </div>
+            <div class="col-6 info">
+              <p>{{ capstone.description }}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 heading">
+              <p>URL:</p>
+            </div>
+            <div class="col-6 info">
+              <p>{{ capstone.url }}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 heading">
+              <p>Description:</p>
+            </div>
+            <div class="col-6 info">
+              <p>{{ capstone.description }}</p>
+            </div>
+          </div>
+          <div class="capstone-photo">
+            <p>This is a photo if it existed</p>
+            <p>{{ capstone.image_url }}</p>
+          </div>      
+        </div> <!-- v-for loop -->
+      </div> <!-- .capstone -->
+ 
+      <div class="twit-box">
+        <a class="twitter-timeline" v-bind:href="'https://twitter.com/' + student.information.twitter_handle">Tweets by {{ student.information.twitter_handle }}</a> 
+      </div>
+      
+    </div> <!-- container -->
+  </div> <!-- vue component -->
 </template>
