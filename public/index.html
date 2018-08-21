@@ -150,7 +150,33 @@
 
     <div>
       <h3>Student Experience</h3>
-      <p></p>
+      <p>Job Title: {{ student.experience.job_title }}</p>
+      <p>Company Name: {{ student.experience.company_name }}</p>
+      <p>Start Date: {{ student.experience.start_date }}</p>
+      <p>End Date: {{ student.experience.end_date }}</p>
+      <p>Details: {{ student.experience.details }}</p>
+    </div>
+
+    <div>
+      <h3>Student Education</h3>
+      <p>University Name: {{ student.education.university_name }}</p>
+      <p>Degree: {{ student.education.degree }}</p>
+      <p>Start Date: {{ student.education.start_date }}</p>
+      <p>End Date: {{ student.education.end_date }}</p>
+      <p>Details: {{ student.education.details }}</p>
+    </div>
+
+    <div>
+      <h3>Student Skills</h3>
+      <p>Skill Name: {{ student.skills.skill_name }}</p>
+    </div>
+
+    <div>
+      <h3>Student Capstone</h3>
+      <p>Name: {{ student.capstone.name }}</p>
+      <p>Description: {{ student.capstone.description }}</p>
+      <p>URL: {{ student.capstone.url }}</p>
+      <p>Image: {{ student.capstone.image_url }}</p>
     </div>
 
     <a class="twitter-timeline" href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> 
