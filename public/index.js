@@ -19,35 +19,35 @@ var IndexPage = {
       students: [
         {
           id: "1",
-          first_name: "a",
-          last_name: "a",
-          email: "a",
-          phone_number: "a",
-          short_bio: "a"
+          first_name: "First Name",
+          last_name: "Last Name a",
+          email: "Email a",
+          phone_number: "Phone Number a",
+          short_bio: "Bio a"
         },
         {
           id: "2",
-          first_name: "b",
-          last_name: "b",
-          email: "b",
-          phone_number: "b",
-          short_bio: "b"
+          first_name: "First Name",
+          last_name: "Last Name b",
+          email: "Email b",
+          phone_number: "Phone Number b",
+          short_bio: "Bio b"
         },
         {
           id: "3",
-          first_name: "c",
-          last_name: "c",
-          email: "c",
-          phone_number: "c",
-          short_bio: "c"
+          first_name: "First Name",
+          last_name: "Last Name c",
+          email: "Email c",
+          phone_number: "Phone Number c",
+          short_bio: "Bio c"
         },
         {
           id: "4",
-          first_name: "d",
-          last_name: "d",
-          email: "d",
-          phone_number: "d",
-          short_bio: "d"
+          first_name: "First Name",
+          last_name: "Last Name d",
+          email: "Email d",
+          phone_number: "Phone Number d",
+          short_bio: "Bio d"
         },
       ]
     };
