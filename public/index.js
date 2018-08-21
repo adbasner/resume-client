@@ -16,8 +16,21 @@ var IndexPage = {
   template: "#index-page",
   data: function() {
     return {
-      message: "Welcome to Vue.js!",
-      students: []
+      students: [
+        {
+          first_name: "",
+          last_name: "",
+          email: "",
+          phone_number: "",
+          short_bio: "",
+          linkedin_url: "",
+          twitter_handle: "",
+          website_url: "",
+          online_resume_url: "",
+          github_url: "",
+          photo_url: ""
+        }
+      ]
     };
   },
   created: function() {
@@ -48,29 +61,37 @@ var ShowPage = {
           github_url: "github.com/profile",
           photo_url: "photo.com"
         },
-        experience: {
-          start_date: "",
-          end_date: "",
-          job_title: "",
-          company_name: "",
-          details: ""
-        },
-        education: {
-          start_date: "",
-          end_date: "",
-          degree: "",
-          university_name: "",
-          details: ""
-        },
-        skills: {
-          skill_name: []
-        },
-        capstone: {
-          name: "",
-          description: "",
-          url: "",
-          image_url: ""
-        }
+        experiences: [
+          {
+            start_date: "",
+            end_date: "",
+            job_title: "",
+            company_name: "",
+            details: ""
+          }
+        ],
+        educations: [
+          {
+            start_date: "",
+            end_date: "",
+            degree: "",
+            university_name: "",
+            details: ""
+          }
+        ],
+        skills: [
+          {
+            skill_name: ""
+          }
+        ],
+        capstones: [
+          {
+            name: "",
+            description: "",
+            url: "",
+            image_url: ""
+          }
+        ]
       }
     };
   },
