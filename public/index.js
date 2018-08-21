@@ -18,6 +18,7 @@ var IndexPage = {
     return {
       students: [
         {
+          id: "",
           first_name: "",
           last_name: "",
           email: "",
@@ -55,47 +56,75 @@ var ShowPage = {
           phone_number: "8675309",
           short_bio: "bio goes here",
           linkedin_url: "linkedin url",
-          twitter_handle: "twitter",
+          twitter_handle: "twitterdev",
           website_url: "web@site.com",
           online_resume_url: "resume.com",
           github_url: "github.com/profile",
           photo_url: "photo.com"
         },
+
         experiences: [
           {
-            start_date: "",
-            end_date: "",
-            job_title: "",
-            company_name: "",
-            details: ""
-          }
+            start_date: "birth",
+            end_date: "death",
+            job_title: "food eater",
+            company_name: "the best place to eat",
+            details: "I ate lots of food and kiwis with no skin"
+          },
+          {
+            start_date: "birth",
+            end_date: "death",
+            job_title: "food eater",
+            company_name: "the best place to eat",
+            details: "I ate lots of food and kiwis with no skin"
+          },
         ],
+
         educations: [
           {
-            start_date: "",
-            end_date: "",
-            degree: "",
-            university_name: "",
-            details: ""
-          }
+            start_date: "last year",
+            end_date: "this year",
+            degree: "bs",
+            university_name: "school of hard knocks",
+            details: "JZ taught me everything"
+          },
+          {
+            start_date: "last year",
+            end_date: "this year",
+            degree: "bs",
+            university_name: "school of hard knocks",
+            details: "JZ taught me everything"
+          },
         ],
+
         skills: [
           {
-            skill_name: ""
-          }
+            skill_name: "Eating food"
+          },
+          {
+            skill_name: "Eating food"
+          },
         ],
+
         capstones: [
           {
-            name: "",
-            description: "",
-            url: "",
-            image_url: ""
-          }
+            name: "Mega Capstone",
+            description: "vary cool capstone",
+            url: "awesomesite.com",
+            image_url: "capstone.url"
+          },
+          {
+            name: "Mega Capstone",
+            description: "vary cool capstone",
+            url: "awesomesite.com",
+            image_url: "capstone.url"
+          },
         ]
       }
     };
   },
   created: function() {
+    console.log(this.student);
     axios.get("/api/resumes/" + this.$route.params.id).then(function(response) {
       this.resume = response.data;
     }.bind(this));
