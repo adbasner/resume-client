@@ -53,10 +53,10 @@ var IndexPage = {
     };
   },
   created: function() {
-    // axios.get("").then(function(response) {
-    //   console.log(response.data);
-    //   this.students = response.data;
-    // }.bind(this));
+    axios.get("http://localhost:3000/api/students").then(function(response) {
+      console.log(response.data);
+      this.students = response.data;
+    }.bind(this));
   },
   methods: {},
   computed: {}
@@ -143,8 +143,8 @@ var ShowPage = {
   },
   created: function() {
     console.log(this.student);
-    axios.get("/api/resumes/" + this.$route.params.id).then(function(response) {
-      this.resume = response.data;
+    axios.get("http://localhost:3000/api/students/" + this.$route.params.id).then(function(response) {
+      this.student = response.data;
     }.bind(this));
   },
   methods: {},
