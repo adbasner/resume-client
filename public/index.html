@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+  
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -59,11 +60,13 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>
 
 <template id="home-page">
   <div class="vue-component">
+
     <div id="#carousel-container" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner" id="carousel">
         <h2 id="carousel-text">{{ message }}</h2>
@@ -128,63 +131,128 @@
 <template id="show-page">
   <div class="vue-component">
     <div class="container show-cont">
-      <h1>Resume of {{ resume.student.first_name }}</h1>
+      <h1>Resume of {{ student.information.first_name }} {{ student.information.last_name }}</h1>
+
+      <div class="photo">
+        <p>This is a photo if it existed</p>
+        <p>{{ student.information.photo_url }}</p>
+      </div>
+      <div class="row">
+        <div class="col-6 heading">
+          <p>Email:</p>
+        </div>
+        <div class="col-6 info">
+          <p>{{ student.information.email }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 heading">
+          <p>Phone Number:</p>
+        </div>
+        <div class="col-6 info">
+          <p>{{ student.information.phone_number }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 heading">
+          <p>Bio:</p>
+        </div>
+        <div class="col-6 info">
+          <p>{{ student.information.short_bio }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 heading">
+          <p>Social Links:</p>
+        </div>
+        <div class="col-6 info">
+          <p>{{ student.information.linkedin_url }}</p>
+          <p>{{ student.information.twitter_handle }}</p>
+          <p>{{ student.information.website_url }}</p>
+          <p>{{ student.information.online_resume_url }}</p>
+          <p>{{ student.information.github_url }}</p>
+        </div>
+      </div>
+
+      <div v-for="experience in student.experiences">
         <div class="row">
           <div class="col-6 heading">
-            <p>First Name:</p>
+            <p>Recent Job:</p>
           </div>
           <div class="col-6 info">
-            <p>{{ resume.student.first_name }}</p>
+            <p>{{ experience.job_title }} at {{ experience.company_name }}</p>
+            <p>Start Date: {{ experience.start_date }}</p>
+            <p>End Date: {{ experience.end_date }}</p>
+            <p>Job description: {{ experience.details }}</p>
           </div>
         </div>
+      </div>
+
+      <div v-for="education in student.educations">
         <div class="row">
           <div class="col-6 heading">
-            <p>Last Name:</p>
+            <p>Schooling:</p>
           </div>
           <div class="col-6 info">
-            <p>{{ resume.student.last_name }}</p>
+            <p>{{ education.degree }} from {{ education.university_name }}</p>
+            <p>Start Date: {{ education.start_date }}</p>
+            <p>End Date: {{ education.end_date }}</p>
+            <p>Job description: {{ education.details }}</p>
           </div>
         </div>
+      </div>
+
+      <div v-for="skill in student.skills">
         <div class="row">
           <div class="col-6 heading">
-            <p>Email:</p>
+            <p>Skillz:</p>
           </div>
           <div class="col-6 info">
-            <p>{{ resume.student.email }}</p>
+            <p>{{ skill.skill_name }}</p>
           </div>
         </div>
-        <div class="row">
-          <div class="col-6 heading">
-            <p>Phone Number:</p>
+      </div>
+
+      <div class="capstone">
+        <h3>Capstone Projcts</h3>
+
+        <div v-for="capstone in student.capstones">
+          <p>{{ capstone.name }}</p>
+          <div class="row">
+            <div class="col-6 heading">
+              <p>Description:</p>
+            </div>
+            <div class="col-6 info">
+              <p>{{ capstone.description }}</p>
+            </div>
           </div>
-          <div class="col-6 info">
-            <p>{{ resume.student.phone_number }}</p>
+          <div class="row">
+            <div class="col-6 heading">
+              <p>URL:</p>
+            </div>
+            <div class="col-6 info">
+              <p>{{ capstone.url }}</p>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-6 heading">
-            <p>Bio:</p>
+          <div class="row">
+            <div class="col-6 heading">
+              <p>Description:</p>
+            </div>
+            <div class="col-6 info">
+              <p>{{ capstone.description }}</p>
+            </div>
           </div>
-          <div class="col-6 info">
-            <p>{{ resume.student.short_bio }}</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6 heading">
-            <p>Social Links:</p>
-          </div>
-          <div class="col-6 info">
-            <p>{{ resume.student.linkedin_url }}</p>
-            <p>{{ resume.student.twitter_handle }}</p>
-            <p>{{ resume.student.website_url }}</p>
-            <p>{{ resume.student.online_resume_url }}</p>
-            <p>{{ resume.student.github_url }}</p>
-          </div>
-        </div>
-        <div class="photo">
-          <p>This is a photo if it existed</p>
-          <p>{{ resume.student.photo_url }}</p>
-        </div>
-    </div>
-  </div>
+          <div class="capstone-photo">
+            <p>This is a photo if it existed</p>
+            <p>{{ capstone.image_url }}</p>
+          </div>      
+        </div> <!-- v-for loop -->
+      </div> <!-- .capstone -->
+ 
+      <div class="twit-box">
+        <a class="twitter-timeline" v-bind:href="'https://twitter.com/' + student.information.twitter_handle">Tweets by {{ student.information.twitter_handle }}</a> 
+      </div>
+      
+    </div> <!-- container -->
+  </div> <!-- vue component -->
 </template>
