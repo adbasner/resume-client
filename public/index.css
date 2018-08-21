@@ -7,10 +7,13 @@ body {
   position: relative;
 }
 
+.carousel-item {
+  max-height: 500px;
+}
+
 #carousel-text {
   position: absolute;
   height: 100%;
-  /*top: 35%;*/
   text-align: center; 
   z-index: 2;
   color: white;
