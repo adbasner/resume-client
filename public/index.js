@@ -18,27 +18,45 @@ var IndexPage = {
     return {
       students: [
         {
-          id: "",
-          first_name: "",
-          last_name: "",
-          email: "",
-          phone_number: "",
-          short_bio: "",
-          linkedin_url: "",
-          twitter_handle: "",
-          website_url: "",
-          online_resume_url: "",
-          github_url: "",
-          photo_url: ""
-        }
+          id: "1",
+          first_name: "a",
+          last_name: "a",
+          email: "a",
+          phone_number: "a",
+          short_bio: "a"
+        },
+        {
+          id: "2",
+          first_name: "b",
+          last_name: "b",
+          email: "b",
+          phone_number: "b",
+          short_bio: "b"
+        },
+        {
+          id: "3",
+          first_name: "c",
+          last_name: "c",
+          email: "c",
+          phone_number: "c",
+          short_bio: "c"
+        },
+        {
+          id: "4",
+          first_name: "d",
+          last_name: "d",
+          email: "d",
+          phone_number: "d",
+          short_bio: "d"
+        },
       ]
     };
   },
   created: function() {
-    axios.get("").then(function(response) {
-      console.log(response.data);
-      this.students = response.data;
-    }.bind(this));
+    // axios.get("").then(function(response) {
+    //   console.log(response.data);
+    //   this.students = response.data;
+    // }.bind(this));
   },
   methods: {},
   computed: {}
